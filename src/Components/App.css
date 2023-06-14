@@ -1,0 +1,305 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css");
+
+/* font-family: 'Montserrat', sans-serif; */
+
+:root {
+  --color-primary: #6C63FF;
+  --color-title: #2F2E41;
+  --color-text: #565360;
+  --color-body: #F5F5F5;
+  --img-shadow-dark: drop-shadow(1px 2px 2px #050d18);
+  --box-shadow-sm: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  --box-shadow-md: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  --text-shadow: 0px 4px 3px rgb(0 0 0 / 40%), 0px 8px 13px rgb(0 0 0 / 10%), 0px 18px 23px rgb(0 0 0 / 10%);
+  --length-sm3: .75rem;
+  --length-md1: 1rem;
+  --length-md2: 1.25rem;
+  --length-md3: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-body);
+}
+
+/* ------------ScrollBar-----------> */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+  background: #b2bbc5;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to right, #868f96 0%, #596164 100%);
+  box-shadow: inset 2px 2px 5px 0 rgba(#fff, 0.5);
+  border-radius: 100px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background-image: linear-gradient(to top, #00c6fb 0%, #005bea 100%);
+}
+/* ----------------------------------- */
+
+.Title {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-primary);
+  font-weight: 700;
+  text-shadow: var(--text-shadow);
+}
+
+.subTitle {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-text);
+  font-weight: 600;
+  text-align: center;
+}
+
+.img1,
+.img2 {
+  filter: var(--img-shadow-dark);
+}
+
+.modalCloseBtnBox {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.closeEditorBtn {
+  display: block;
+  position: absolute;
+  top: -.75rem;
+  right: -.5rem;
+  z-index: 1200;
+}
+
+.modalInput {
+  width: 0;
+  border-radius: 0;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid blue;
+  transition: all .5s ease-in-out;
+}
+
+.modalInput:focus {
+  width: 100%;
+  border: none;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+  border-bottom: 2px solid blue;
+}
+
+.modalInput:focus::placeholder {
+  transform: translateY(-12px) translateX(30px);
+  color: transparent;
+  transition: all .4s ease-in-out;
+}
+
+.expanded {
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid blue;
+  transition: all .5s ease-in-out;
+}
+
+.bi-pen {
+  display: inline-block;
+  margin-bottom: -5px;
+}
+
+.bi-pen:hover {
+  cursor: pointer;
+}
+
+.bi-pen-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip {
+  position: absolute;
+  top: -35px;
+  left: 85%;
+  transform: translateX(-50%);
+  background-color: #0D6EFD;
+  color: #fff;
+  padding: .5rem;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0.9;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 5px;
+  border-style: solid;
+  border-color: #0D6EFD transparent transparent transparent;
+}
+
+/* ----------List-Style------------- */
+.square {
+  margin: 0;
+  counter-reset: li;
+  list-style: none;
+  background:#E8E8E8;
+  padding: 25px 10px;
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-sm);
+}
+.square li {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--color-title);
+  font-size: var(--length-md2);
+  font-weight: 400;
+  position: relative;
+  margin: 0 0 10px 2em;
+  padding: 4px 8px;
+  border-top: 2px solid #787A77;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  transition: .3s linear;
+}
+.square li:last-child {margin-bottom: 0;}
+.square li:before {
+  content: counter(li);
+  counter-increment: li;
+  position: absolute;
+  top: -2px;
+  left: -2em;
+  width: 2em;
+  box-sizing: border-box;
+  margin-right: 8px;
+  padding: 4px;
+  border-top: 2px solid #787A77;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  background: #787A77;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  transition: .3s linear;
+}
+.square li:hover {border-top: 2px solid #389F70;}
+.square li:hover:before {
+  border: 2px solid #389F70;
+  background: #98EABA;
+}
+
+.bi-pencil:hover,
+.bi-x-octagon:hover {
+  cursor: pointer;
+}
+/* --------------------------------- */
+
+.crossed {
+  text-decoration: line-through 2px red;
+  opacity: .6;
+  -webkit-text-decoration-line: line-through;
+  -webkit-text-decoration-color: red;
+  -webkit-text-decoration-thickness:2px;
+}
+
+.WarningBox {
+  height: 4rem;
+}
+
+.warningMessage {
+  color: red;
+}
+
+.addBtn {
+  box-shadow: var(--box-shadow-sm);
+}
+
+.deleteAllBtn {
+  position: relative;
+  box-shadow: var(--box-shadow-sm);
+}
+
+.tooltip-text {
+  width: 120px;
+  position: absolute;
+  top: -30px; /* Adjust this value to position the tooltip */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.deleteAllBtn:hover .tooltip-text {
+  opacity: 1;
+  visibility: visible;
+}
+
+.icon-position{
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 1110;
+}
+.icon-style{
+  animation: movebtn 3s ease-in-out infinite;
+  transition: all .5s ease-in-out;
+}
+.icon-style:hover{
+  animation: none;
+  color: var(--color-red);
+}
+@keyframes movebtn {
+  0%{
+      transform: translateY(0px);
+  }
+  25%{
+      transform: translateY(20px);
+  }
+  50%{
+      transform: translateY(0px);
+  }
+  75%{
+      transform: translateY(-20px);
+  }
+  100%{
+      transform: translateY(0px);
+  }
+}
+
+
+@media all and (max-width: 767px) {
+  .tooltip {
+    left: -50%;
+  }
+  .square li {
+    font-size: var(--length-sm3);
+  }
+}
