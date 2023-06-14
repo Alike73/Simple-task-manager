@@ -18,7 +18,7 @@ The Simple Task Manager App is a web-based task management application built wit
 To run the Simple Task Manager App locally, follow these steps:
 
 1. Clone the repository:
-git clone https://github.com/your-username/simple-task-manager.git
+git clone https://github.com/Alike73/Simple-task-manager
 
 2. Navigate to the project directory:
 cd simple-task-manager
