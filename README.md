@@ -2,7 +2,7 @@
 
 The Simple Task Manager App is a web-based task management application built with React. It allows users to create, edit, and delete tasks, providing a simple and intuitive interface for organizing their daily activities.
 
-<a href="https://www.example.com"><img src="./src/Assets/planer.png" alt="Screenshot" width="200"></a>
+<a href="https://fabulous-eclair-c20eb5.netlify.app"><img src="./src/Assets/planer.png" alt="Screenshot" width="200"></a>
 
 
 ## Features
